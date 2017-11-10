@@ -4,9 +4,15 @@ import java.util.ArrayList;
 
 /**
  * Une file de communication bornee bloquante.
- *
- * Les threads peuvent dÃ©poser (resp. prendre) des objets dans une telle file.
- * Cette opÃ©rations peut Ãªtre bloquante si la file est pleine (resp. vide).
+ * 
+ * Les threads peuvent déposer (resp. prendre) des objets dans une telle file.
+ * Cette opérations peut être bloquante si la file est pleine (resp. vide).
+ */
+
+/**
+ * Classe AbstractFileBloquanteBornee
+ * 
+ * @author Beillevaire Thibault & Biermann Pierre
  */
 public abstract class AbstractFileBloquanteBornee<E>
 {
@@ -16,13 +22,13 @@ public abstract class AbstractFileBloquanteBornee<E>
     int queue;
     boolean estVide;
     boolean estPleine;
-
-    /**
-     * CrÃ©er une file de capacitÃ© maximale n.
-     *
-     * param n - la capacitÃ© maximale de la file.
-     * n devrait Ãªtre supÃ©rieur ou Ã©gal Ã  1.
-     */
+    int nombre;
+/**
+* Créer une file de capacité maximale n.
+* 
+* param n - la capacité maximale de la file. n devrait être supérieur ou
+* égal à 1.
+*/
     @SuppressWarnings({"unchecked"})
     public AbstractFileBloquanteBornee (int n) throws IllegalArgumentException 
     {
@@ -42,26 +48,24 @@ public abstract class AbstractFileBloquanteBornee<E>
         }
     }
 
-    /**
-     * DÃ©poser une rÃ©fÃ©rence dans la file.
-     *
-     * Le dÃ©pÃ´t est fait en fin de file.
-     * L'objet rÃ©fÃ©rencÃ© n'est pas copiÃ© au moment du dÃ©pÃ´t.
-     * Le dÃ©pÃ´t est bloquant lorsque la file est pleine
-     *
-     * param e - l'Ã©lÃ©ment Ã  ajouter Ã  la file
-     */
+/**
+* Déposer une référence dans la file.
+* 
+* Le dépôt est fait en fin de file. L'objet référencé n'est pas copié au
+* moment du dépôt. Le dépôt est bloquant lorsque la file est pleine
+* 
+* param e - l'élément à ajouter à la file
+*/
      abstract public void deposer (E e) throws InterruptedException;
 
-    /**
-     * Prendre une rÃ©fÃ©rence dans la file.
-     *
-     * La prise est faite en tÃªte de file.
-     * L'objet rÃ©fÃ©rencÃ© n'est pas copiÃ© au moment du dÃ©pÃ´t.
-     * La prise est bloquante lorsque la file est vide.
-     *
-     * returns la rÃ©fÃ©rence de tÃªte de la file
-     */
+/**
+* Prendre une référence dans la file.
+* 
+* La prise est faite en tête de file. L'objet référencé n'est pas copié au
+* moment du dépôt. La prise est bloquante lorsque la file est vide.
+* 
+* returns la référence de tête de la file
+*/
     abstract public E prendre () throws InterruptedException;
 
 }
