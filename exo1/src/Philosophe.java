@@ -72,7 +72,7 @@ public class Philosophe implements Runnable
 
   public static void main( String args[] )
   {
-    final String[] noms = { "Platon", "Socrate", "Aristote", "DiogÃ¨ne", "SÃ©nÃ¨que" };
+    final String[] noms = { "Platon", "Socrate", "Aristote", "Diogène", "Sénèque" };
     final Baguette[] baguettes = { new Baguette(), new Baguette(), new Baguette(), new Baguette(), new Baguette() }; 
     Philosophe[] table;
 
