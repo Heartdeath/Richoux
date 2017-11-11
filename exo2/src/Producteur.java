@@ -60,11 +60,11 @@ class Consommateur extends Thread {
 }
 
 /**
- * Classe TestBufferBasNiveau
+ * Classe TestApiBasNiveau
  * 
  * @author Beillevaire Thibault & Biermann Pierre
  */
-class TestBufferBasNiveau {
+class TestApiBasNiveau {
 
 	public static void main(String args[]) {
 
@@ -79,11 +79,11 @@ class TestBufferBasNiveau {
 }
 
 /**
- * Classe TestBufferHautNiveau
+ * Classe TestApiHautNiveau
  * 
  * @author Beillevaire Thibault & Biermann Pierre
  */
-class TestBufferHautNiveau {
+class TestApiHautNiveau {
 
 	public static void main(String args[]) {
 
